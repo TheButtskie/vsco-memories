@@ -45,4 +45,5 @@ var getImgs = function(data) {
   	  image_location.setAttribute("src", data[i][0]);
   	}, 2000*i);
   }
+  image_location.setAttribute("src", ""); //reset to blank source
 };
