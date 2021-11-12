@@ -1,3 +1,4 @@
+var imageList = [];
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -26,6 +27,10 @@ window.onload = function() {
         console.log('Something went wrong: ' + err);
       } else {
         console.log('Your query count: ' + data.data);
+        imageList = data.data
+        if (imageList.length > 0) {
+          getImgs(imageList)
+        }
       }
     });
     return false;
