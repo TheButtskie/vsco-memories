@@ -151,4 +151,103 @@ td,th{
 }
 
 /* For sure used */
-.css-rco518-Container{width:88%;max-width:;margin-left:auto;margin-right:auto;}
+.css-rco518-Container{
+    text-size-adjust: 100%;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.css-1l1ec57{
+    text-size-adjust: 100%;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    margin: 0px auto;
+}
+
+.sr-only{
+    text-size-adjust: 100%;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    font-size: 2em;
+    margin: 0px;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    border: 0px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.SearchForm{
+    text-size-adjust: 100%;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 65px;
+    margin-bottom: 100px;
+}
+
+.SearchFormInput-container{
+    text-size-adjust: 100%;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.sr-only-label{
+    text-size-adjust: 100%;
+    font-family: "VSCO Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    vertical-align: middle;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    border: 0px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+#SearchFormInput{
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    color: inherit;
+    font: inherit;
+    margin: 0px;
+    line-height: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: inherit;
+    width: 100%;
+    height: auto;
+    padding-left: 0px;
+    padding-bottom: 12px;
+    border-width: 0px 0px 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-radius: 0px;
+    outline: none;
+    font-size: 24px;
+    box-sizing: inherit;
+    vertical-align: middle;
+    appearance: none;
+}
