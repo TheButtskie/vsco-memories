@@ -286,9 +286,7 @@ img {
   padding: 16px;
 }
 
-.reference:hover > .popout-menu,
-.reference:focus > .popout-menu,
-.reference:focus-within > .popout-menu {
+.reference:hover > .popout-menu {
   visibility: visible;
 }
 
