@@ -1,3 +1,27 @@
+//https://stackoverflow.com/questions/14544104/checkbox-check-event-listener
+// Select all checkboxes with the name 'settings' using querySelectorAll.
+var checkboxes = document.querySelectorAll("input[type=checkbox][name=adjust]");
+let enabledSettings = []
+
+/*
+For IE11 support, replace arrow functions with normal functions and
+use a polyfill for Array.forEach:
+https://vanillajstoolkit.com/polyfills/arrayforeach/
+*/
+
+// Use Array.forEach to add an event listener to each checkbox.
+checkboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    enabledSettings = 
+      Array.from(checkboxes) // Convert checkboxes to an array to use filter and map.
+      .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+      .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
+      
+    console.log(enabledSettings)
+  })
+});
+
+// GET request
 var imageList = [];
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
@@ -37,13 +61,36 @@ window.onload = function() {
   });
 }
 
+// slider for delay
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+// helper function inside of getImgs ~ choose random image 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 // cycle through the images
 var getImgs = function(data) {
   var image_location = document.getElementsByTagName("img")[0];
-  for (let i = 0; i < data.length; i++) {
+  var loop_on = enabledSettings.includes("loop");
+  var randomize_on = enabledSettings.includes("randomize");
+
+  let i = 0;
+  while (i < data.length || loop_on) {
     setTimeout(function(){
-  	  image_location.setAttribute("src", data[i][0]);
+      if (randomize_on) {
+        image_location.setAttribute("src", data[getRandomInt(data.length)][0]);
+      } else {
+        image_location.setAttribute("src", data[i % data.length][0]);
+      }
   	}, 2000*i);
+    i++;
   }
   image_location.setAttribute("src", ""); //reset to blank source
 };
