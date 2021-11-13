@@ -80,6 +80,7 @@ var getImgs = function(data) {
   var image_location = document.getElementsByTagName("img")[0];
   var loop_on = enabledSettings.includes("loop");
   var randomize_on = enabledSettings.includes("randomize");
+  var user_delay = Number(slider.value)*1000;
 
   let i = 0;
   while (i < data.length || loop_on) {
@@ -89,7 +90,7 @@ var getImgs = function(data) {
       } else {
         image_location.setAttribute("src", data[i % data.length][0]);
       }
-  	}, 2000*i);
+  	}, user_delay*i);
     i++;
   }
   image_location.setAttribute("src", ""); //reset to blank source
