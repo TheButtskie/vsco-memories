@@ -9,9 +9,18 @@
   <body>
     <div class="reference" tabindex="0">
       <div class="popout-menu">Popout menu
-        <div class="delay">Delay (slider)</div>
-        <div class="loop">Loop (checkbox)</div>
-        <div class="ranomize">Ranomize (checkbox)</div>
+        <br>
+        <br>
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          <p>Value: <span id="demo"></span></p>
+        </div>
+        <br>
+        <input type="checkbox" id="loop" name="adjust" value="loop">
+        <label for="loop">Loop</label><br>
+        <br>
+        <input type="checkbox" id="ranomize" name="adjust" value="ranomize">
+        <label for="ranomize">Ranomize</label><br>
       </div>
     </div>
     <h1>Hello World!</h1>
