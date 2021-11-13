@@ -264,3 +264,30 @@ img {
     will-change: transform, opacity;
     margin: auto;
 }
+
+
+
+
+
+/* Used for Adjustment Menu */
+.reference {
+  position: relative;
+  background: tomato;
+  width: 100px;
+  height: 80px;
+}
+
+.popout-menu {
+  position: absolute;
+  visibility: hidden;
+  top: 100%;
+  background: #9C27B0;
+  color: white;
+  padding: 16px;
+}
+
+.reference:hover > .popout-menu,
+.reference:focus > .popout-menu,
+.reference:focus-within > .popout-menu {
+  visibility: visible;
+}
