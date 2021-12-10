@@ -272,12 +272,24 @@ img {
 /* Used for Adjustment Menu */
 .reference {
   position: relative;
-  background: tomato;
   width: 100px;
   height: 80px;
 }
 
-.popout-menu {
+.reference:active, .reference:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
+.settings {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+#popout-menu {
   position: absolute;
   visibility: hidden;
   top: 100%;
@@ -289,11 +301,52 @@ img {
 .reference:hover > .popout-menu {
   visibility: visible;
 }
+*/
+#popout-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #EBECF0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+#popout-menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#popout-menu a:hover {
+  color: #000000;
+}
+
+#popout-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  #popout-menu {padding-top: 15px;}
+  #popout-menu a {font-size: 18px;}
+}
 
 
 /* Slider in adjustment menu */
 .slidecontainer {
-  width: 100%;
+  width: 80%;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .slider {
@@ -325,4 +378,11 @@ img {
   height: 25px;
   background: #04AA6D;
   cursor: pointer;
+}
+
+.checkcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
