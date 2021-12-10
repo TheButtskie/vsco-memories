@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Buttskie</title>
+    <title>Vsco Memories</title>
     <link type="text/css" rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="grid-cards.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Information about The Buttskie, software developer and gamer" />
+    <meta name="description" content="Search by username to discover original content from the VSCO community." />
   </head>
   <body>
+    <!-- Popout Menu Bar -->
     <div class="reference" tabindex="0">
-      <div class="popout-menu">Popout menu
+      <span class="settings" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <div id="popout-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <br>
         <br>
         <div class="slidecontainer">
+          <label for="ranomize">Photo Delay</label><br>
           <input type="range" min="1" max="10" value="2" step="0.10" class="slider" id="myRange">
-          <p>Value: <span id="demo"></span></p>
+          <div>Value: <span id="demo"></span></div>
         </div>
         <br>
-        <input type="checkbox" id="loop" name="adjust" value="loop">
-        <label for="loop">Loop</label><br>
-        <br>
-        <input type="checkbox" id="ranomize" name="adjust" value="ranomize">
-        <label for="ranomize">Ranomize</label><br>
+        <div class="checkcontainer">
+          <div>
+            <input type="checkbox" id="loop" name="adjust" value="loop">
+            <label for="loop">Loop</label><br>
+            <br>
+            <br>
+            <input type="checkbox" id="ranomize" name="adjust" value="ranomize">
+            <label for="ranomize">Ranomize</label><br>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Header Nav Bar -->
     <h1>Hello World!</h1>
-     
+
+    <!-- Card Grid --> 
     <img src="">
+
+    <!-- Search Bar -->
     <div class="css-rco518-Container ebat0h80">
       <div class="Search css-1l1ec57">
         <h1 class="sr-only">Search</h1>
@@ -35,7 +50,8 @@
         <section class="SearchResultsPeople-container grid grid--withGutter flex-end"></section>
       </div>
     </div>
-     
+
+    <!-- Scripts -->
     <script src="utility.js"></script> 
   </body>
 </html>
