@@ -11,6 +11,7 @@ https://thebuttskie.github.io/vsco-memories
 
 ### Things to do (Bugs + Features):
 - [x] resize image to only take up portion of screen [still work in progress to make it cleaner]
+- [ ] [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout) vs. single view
 - [ ] add vs logo + other asthetics
 - [ ] add waiting during video clips (allow clips to fully play)
 - [ ] fix if user wants to edit settings while previewing ~ currently won't update system
