@@ -61,6 +61,16 @@ window.onload = function() {
   });
 }
 
+// settings menu
+function openNav() {
+  document.getElementById("popout-menu").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("popout-menu").style.width = "0";
+}
+
+
 // slider for delay
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
