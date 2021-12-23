@@ -112,6 +112,9 @@ function getViewingValue(viewing_type) {
 
 // cycle through the images
 var getImgs = function(data) {
+  console.log(data.length)
+  console.log(data[0])
+
   var image_location = document.getElementsByTagName("img")[0];
   var loop_on = enabledSettings.includes("loop");
   var randomize_on = enabledSettings.includes("randomize");
