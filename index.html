@@ -2,147 +2,111 @@
 <html>
   <head>
     <title>VSCO Memories</title>
-    <link type="text/css" rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="grid-cards.css">
+    <link type="text/css" rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Search by username to discover original content from the VSCO community." />
   </head>
   <body>
-    <!-- Popout Menu Bar -->
-    <div class="reference" tabindex="0">
-      <div id="popout-menu">
-        <div class="bg"></div>
-        <div class="button" tabindex="0">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </div>
+    <header>
+      <!-- Popout Menu Bar -->
+      <div class="reference" tabindex="0">
+        <div id="popout-menu">
+          <div class="bg"></div>
+          <div class="button" tabindex="0">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </div>
 
-        <br>
-        <br>
-        <div id="setting-content" tabindex="0">
-          <div class="checkcontainer">
-            <div>
-              <input type="radio" id="single" name="viewing" value="single">
-              <label for="single">Portrait</label><br>
-              <input type="radio" id="gallery" name="viewing" value="gallery" checked>
-              <label for="gallery">Gallery</label><br>
+          <div id="setting-content" tabindex="0">
+            <div class="checkcontainer radiocontainer">
+              <div>
+                <input type="radio" id="single" name="viewing" value="single">
+                <label for="single">Portrait</label><br>
+                <input type="radio" id="gallery" name="viewing" value="gallery" checked>
+                <label for="gallery">Gallery</label><br>
+              </div>
+            </div>
+            <br>
+            <div class="slidecontainer">
+              <label for="ranomize">Photo Delay</label><br>
+              <input type="range" min="1" max="10" value="2" step="0.10" class="slider" id="myRange">
+              <div class="delay-value"><span id="demo"></span>&#160;seconds</div>
+            </div>
+            <br>
+            <div class="checkcontainer">
+              <div>
+                <input type="checkbox" id="loop" name="adjust" value="loop">
+                <label for="loop">Loop</label><br>
+                <br>
+                <input type="checkbox" id="ranomize" name="adjust" value="ranomize">
+                <label for="ranomize">Ranomize</label><br>
+              </div>
             </div>
           </div>
-          <br>
-          <div class="slidecontainer">
-            <label for="ranomize">Photo Delay</label><br>
-            <input type="range" min="1" max="10" value="2" step="0.10" class="slider" id="myRange">
-            <div class="delay-value"><span id="demo"></span>&#160;seconds</div>
-          </div>
-          <br>
-          <div class="checkcontainer">
-            <div>
-              <input type="checkbox" id="loop" name="adjust" value="loop">
-              <label for="loop">Loop</label><br>
-              <br>
-              <br>
-              <input type="checkbox" id="ranomize" name="adjust" value="ranomize">
-              <label for="ranomize">Ranomize</label><br>
-            </div>
+        </div>
+      </div>
+
+      <!-- VSCO Logo -->
+      <a class="Header-vscoLink feed-page-false" href="https://vsco.co/"><svg id="vsco-logo" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.7695 25.5828L23.0721 23.6601C23.6235 23.1456 24.1257 22.5798 24.5712 21.9696L26.6784 23.4294C26.1138 24.2091 25.4751 24.9309 24.7695 25.5828ZM3.32492 23.4345L5.43602 21.9801C5.88512 22.5939 6.39152 23.163 6.94772 23.679L5.24522 25.5969C4.53512 24.9429 3.89252 24.2178 3.32492 23.4345ZM5.25271 4.39563L6.95281 6.31593C6.39541 6.83253 5.88841 7.40163 5.43841 8.01603L3.32941 6.55893C3.89791 5.77533 4.54171 5.04993 5.25271 4.39563ZM26.7204 6.62908L24.6072 8.08048C24.1641 7.46728 23.6643 6.89818 23.115 6.38068L24.8202 4.46548C25.5231 5.12098 26.1594 5.84608 26.7204 6.62908ZM26.1711 18.9384C26.4198 18.2352 26.6049 17.502 26.7171 16.7457L29.2623 17.0601C29.1234 18.0249 28.8891 18.9591 28.5687 19.8528L26.1711 18.9384ZM25.9614 19.4883L28.3572 20.4018C27.9933 21.2985 27.543 22.1505 27.0144 22.9467L24.9063 21.486C25.3182 20.8584 25.6728 20.1903 25.9614 19.4883ZM23.9895 21.7689L21.9699 20.1513C22.6203 19.2735 23.1093 18.2697 23.3919 17.1831L25.9137 17.7654C25.5408 19.2363 24.8781 20.592 23.9895 21.7689ZM20.1477 25.0077L19.0296 22.6743C20.0142 22.1547 20.8872 21.4518 21.603 20.6109L23.6229 22.2285C22.6641 23.3703 21.4833 24.3177 20.1477 25.0077ZM20.7738 25.3392C21.4347 24.9684 22.0566 24.5367 22.632 24.051L24.3282 25.9725C23.5983 26.5941 22.8066 27.1449 21.9624 27.6132L20.7738 25.3392ZM18.1383 26.4216C18.8745 26.2191 19.5819 25.9479 20.2536 25.614L21.4413 27.8865C20.5881 28.3143 19.6878 28.6608 18.7488 28.914L18.1383 26.4216ZM15.318 26.8389C16.0884 26.8182 16.8402 26.7249 17.5674 26.5635L18.1773 29.0544C17.253 29.2635 16.296 29.3826 15.3144 29.4036L15.318 26.8389ZM12.4767 26.5737C13.2054 26.7324 13.9587 26.8227 14.73 26.8398L14.7261 29.4048C13.7439 29.3865 12.7854 29.2695 11.8599 29.0631L12.4767 26.5737ZM9.78057 25.6317C10.4553 25.9644 11.166 26.2338 11.9055 26.4342L11.2881 28.9248C10.3461 28.6734 9.44247 28.3281 8.58627 27.9009L9.78057 25.6317ZM9.2598 25.3587L8.0649 27.6285C7.2162 27.1608 6.4206 26.6088 5.6868 25.9857L7.3884 24.069C7.9677 24.5559 8.5941 24.9885 9.2598 25.3587ZM8.37659 20.5878C9.08969 21.4314 9.95999 22.1376 10.9428 22.6602L9.81689 24.9894C8.48399 24.2952 7.30589 23.3439 6.35129 22.1988L8.37659 20.5878ZM4.07703 17.727L6.59973 17.154C6.87873 18.2415 7.36503 19.2468 8.01213 20.1264L5.98563 21.7383C5.10153 20.5584 4.44453 19.1994 4.07703 17.727ZM4.03684 19.4841C4.32754 20.1918 4.68454 20.8653 5.10064 21.4971L2.98834 22.9518C2.45644 22.1511 2.00374 21.2934 1.63834 20.3913L4.03684 19.4841ZM3.2796 16.7226C3.3912 17.4861 3.5766 18.2253 3.8271 18.9345L1.4274 19.842C1.1055 18.9423 0.871496 18.0015 0.733796 17.0298L3.2796 16.7226ZM3.82804 11.0628C3.57754 11.7723 3.39184 12.5118 3.27994 13.2753L0.734437 12.9645C0.872737 11.9925 1.10704 11.0514 1.42954 10.1517L3.82804 11.0628ZM4.03802 10.5132L1.64072 9.60245C2.00672 8.70005 2.46002 7.84235 2.99282 7.04105L5.10302 8.49905C4.68662 9.13115 4.32872 9.80495 4.03802 10.5132ZM6.05188 8.17712L8.07298 9.79052C7.41928 10.6575 6.92578 11.6508 6.63328 12.726L4.10788 12.1476C4.49068 10.6878 5.16058 9.34382 6.05188 8.17712ZM9.87748 4.97882L10.9998 7.31042C10.0245 7.81982 9.15808 8.50892 8.44408 9.33392L6.42178 7.71962C7.37848 6.59402 8.55208 5.65922 9.87748 4.97882ZM9.26818 4.63625C8.60128 5.00675 7.97398 5.43905 7.39348 5.92655L5.69458 4.00745C6.42958 3.38435 7.22608 2.83205 8.07628 2.36435L9.26818 4.63625ZM11.9178 3.56193C11.1774 3.76173 10.4652 4.03083 9.78927 4.36353L8.59827 2.09313C9.45567 1.66593 10.3608 1.32093 11.304 1.07043L11.9178 3.56193ZM14.7465 3.15934C13.974 3.17584 13.2195 3.26494 12.4896 3.42304L11.8761 0.933035C12.8028 0.727235 13.7628 0.611735 14.7465 0.594635V3.15934ZM17.6193 3.44817C16.8813 3.28107 16.1175 3.18297 15.3348 3.16137V0.596375C16.3311 0.619475 17.3025 0.743674 18.2397 0.959674L17.6193 3.44817ZM20.304 4.41152C19.6329 4.07372 18.9258 3.79892 18.1896 3.59252L18.8103 1.10312C19.7493 1.36082 20.6493 1.71152 21.5013 2.14442L20.304 4.41152ZM20.8227 4.68868L22.0206 2.42038C22.8636 2.89288 23.6535 3.44758 24.3816 4.07338L22.677 5.98798C22.1031 5.49838 21.4827 5.06308 20.8227 4.68868ZM21.5754 9.35697C20.8638 8.52897 20.0001 7.83687 19.0266 7.32387L20.1567 4.99677C21.4797 5.68167 22.6506 6.62007 23.6037 7.74927L21.5754 9.35697ZM25.902 12.1854L23.3748 12.7551C23.0859 11.6784 22.5957 10.683 21.9453 9.81388L23.9718 8.20798C24.8592 9.37738 25.5249 10.7238 25.902 12.1854ZM25.9845 10.5705C25.6995 9.86612 25.3488 9.19562 24.9393 8.56592L27.0537 7.11392C27.5784 7.91342 28.0251 8.76782 28.3845 9.66662L25.9845 10.5705ZM19.6275 4.74004L18.4971 7.06803C17.5116 6.63153 16.4304 6.37443 15.294 6.33603V3.74854C16.8351 3.78844 18.2994 4.13883 19.6275 4.74004ZM14.7057 3.74854V6.33603C13.5798 6.37383 12.5082 6.62643 11.5299 7.05573L10.4076 4.72413C11.7264 4.13253 13.1784 3.78814 14.7057 3.74854ZM3.74103 15C3.74103 14.2191 3.82143 13.4568 3.97353 12.7203L6.49743 13.2981C6.38733 13.8486 6.32883 14.4177 6.32883 15C6.32883 15.5391 6.38073 16.0665 6.47553 16.5786L3.95013 17.1522C3.81423 16.4553 3.74103 15.7362 3.74103 15ZM10.3455 25.2474L11.4717 22.9176C12.4614 23.3607 13.548 23.6229 14.6904 23.6634L14.6859 26.2506C13.1418 26.208 11.6754 25.8537 10.3455 25.2474ZM15.2742 26.2515L15.2787 23.664C16.422 23.6274 17.5095 23.3694 18.5004 22.9302L19.6182 25.2639C18.2868 25.8651 16.8189 26.2143 15.2742 26.2515ZM15 23.0826C10.5429 23.0826 6.91708 19.4568 6.91708 15C6.91708 10.5429 10.5429 6.91681 15 6.91681C19.4568 6.91681 23.0826 10.5429 23.0826 15C23.0826 19.4568 19.4568 23.0826 15 23.0826ZM26.2584 15C26.2584 15.75 26.1834 16.4823 26.0427 17.1915L23.5188 16.6086C23.6172 16.0869 23.6709 15.5499 23.6709 15C23.6709 14.4279 23.6136 13.8693 23.5077 13.3281L26.034 12.7587C26.1807 13.4832 26.2584 14.2326 26.2584 15ZM26.1912 11.1213L28.5924 10.2171C28.9086 11.1126 29.1378 12.048 29.2716 13.014L26.7252 13.3176C26.6169 12.5601 26.4363 11.826 26.1912 11.1213ZM0.588318 15C0.588318 14.5101 0.613218 14.0259 0.661218 13.5483L3.20882 13.8591C3.17282 14.2347 3.15302 14.6151 3.15302 15C3.15302 15.384 3.17282 15.7638 3.20882 16.1385L0.660618 16.446C0.613218 15.9702 0.588318 15.4881 0.588318 15ZM29.4117 15C29.4117 15.4986 29.3862 15.9909 29.3364 16.4766L26.7888 16.1619C26.8263 15.7794 26.8467 15.3921 26.8467 15C26.8467 14.6295 26.8272 14.2638 26.7939 13.9017L29.3424 13.5981C29.3874 14.0595 29.4117 14.5269 29.4117 15ZM15 0C6.7287 0 0 6.729 0 15C0 23.271 6.7287 30 15 30C23.2707 30 30 23.271 30 15C30 6.729 23.2707 0 15 0Z" fill="#000"></path></svg></a>
+
+      <!-- Header Nav Bar -->
+      <!-- <h1>Memories</h1> -->
+    </header>
+
+    <nav></nav>
+    <section>
+      <!-- Card Grid --> 
+      <div class="photo-grid">
+        <img class="card card-tall card-wide" 
+          src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
+        <img class="card card-tall" 
+          src="https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80">
+        <img class="card" 
+          src="https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80">
+        <img class="card"
+          src="https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80">
+        <img class="card"
+          src="https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+        <img class="card d-none d-lg-block"
+          src="https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+        <img class="card card-wide d-none d-lg-block"
+          src="https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80">
+        <img class="card d-none d-xl-block"
+          src="https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80">
+        <img class="card d-none d-xl-block"
+          src="https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80">
+        <img class="card d-none d-xl-block"
+          src="https://images.unsplash.com/photo-1583468323330-9032ad490fed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80">
+        <img class="card d-none d-xl-block"
+          src="https://images.unsplash.com/photo-1583425423320-2386622cd2e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80">
+        <img class="card d-none d-xl-block"
+          src="https://images.unsplash.com/photo-1583518257225-f9a8081f6a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+      </div>
+      <!-- Portrait Mode -->
+      <div class="single-photo">
+        <img class="card card-tall"
+          src="https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80">
+      </div>
+
+      <!-- Search Bar -->
+      <div class="css-rco518-Container ebat0h80">
+        <div class="Search css-1l1ec57">
+          <h1 class="sr-only">Search</h1>
+          <div class="SearchForm">
+            <div class="SearchFormInput-container relative"><label class="sr-only-label" for="SearchFormInput">Search</label><input id="SearchFormInput" class="SearchFormInput" type="search" placeholder="Search" aria-label="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value=""></div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <aside></aside>
 
-    <!-- Header Nav Bar -->
-    <h1>Hello World!</h1>
-
-    <!-- Card Grid --> 
-    <div class="photo-grid">
-      <div
-        class="card card-tall card-wide"
-        style="background-image:url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')"
-      >
-        1
-      </div>
-      <div
-        class="card card-tall"
-        style="background-image:url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80')"
-      >
-        2
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80')"
-      >
-        3
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80')"
-      >
-        4
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')"
-      >
-        5
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')"
-      >
-        6
-      </div>
-      <div
-        class="card card-wide"
-        style="background-image:url('https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80')"
-      >
-        7
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')"
-      >
-        8
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')"
-      >
-        9
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583468323330-9032ad490fed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80')"
-      >
-        10
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583425423320-2386622cd2e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')"
-      >
-        11
-      </div>
-      <div
-        class="card"
-        style="background-image:url('https://images.unsplash.com/photo-1583518257225-f9a8081f6a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')"
-      >
-        12
-      </div>
-    </div>
-    <div class="single-photo" style="display: none;">
-      <img src="https://images.unsplash.com/photo-1583518257225-f9a8081f6a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-    </div>
-
-
-    <!-- Search Bar -->
-    <div class="css-rco518-Container ebat0h80">
-      <div class="Search css-1l1ec57">
-        <h1 class="sr-only">Search</h1>
-        <div class="SearchForm">
-          <div class="SearchFormInput-container relative"><label class="sr-only-label" for="SearchFormInput">Search</label><input id="SearchFormInput" class="SearchFormInput" type="search" placeholder="Search" aria-label="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value=""></div>
-        </div>
-        <section class="SearchResultsPeople-container grid grid--withGutter flex-end"></section>
-      </div>
-    </div>
+    <footer>
+      <!--<div class="checkcontainer">For Emily.</div>-->
+      <div class="checkcontainer">All rights to their respective owners.</div>
+    </footer>
 
     <!-- Scripts -->
     <script src="utility.js"></script> 
