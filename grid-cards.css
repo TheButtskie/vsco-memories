@@ -10,16 +10,16 @@
 
 /* Medium screens */
 @media screen and (min-width: 600px) {
-  .card-tall {
+  .cards-tall {
     grid-row: span 2 / auto;
   }
 
-  .card-wide {
+  .cards-wide {
     grid-column: span 2 / auto;
   }
 }
 
-.card {
+.cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
