@@ -5,7 +5,7 @@ https://thebuttskie.github.io/vsco-memories
 
 ## Finished Features:
 - A single page of images (no scrolling)
-- - A grid and portait viewing style 
+- A grid and portait viewing style 
 - Set the interval between images
 - Loop through a user's images
 - Randomly show a user's images
