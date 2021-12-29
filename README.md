@@ -4,16 +4,17 @@ viewable on:
 https://thebuttskie.github.io/vsco-memories
 
 ## Finished Features:
+- A single page of images (no scrolling)
+- - A grid and portait viewing style 
 - Set the interval between images
 - Loop through a user's images
 - Randomly show a user's images
-- A grid and portait viewing style
 
 
 ### Things to do (Bugs + Features):
-- [ ] adjust grid and portrait view [to make them cleaner and without scrolling]
-- [ ] fix search bar overlap + other bugs?
-- [ ] add vs logo + other asthetics
+- [ ] adjust grid and portrait view [breakpoints]
+- [ ] search bar bugs? [make sure it works + clears userinfo?]
+- [ ] enhance settings asthetics
 - [ ] fix if user wants to edit settings while previewing ~ currently won't update system
 
 
