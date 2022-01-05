@@ -69,7 +69,7 @@ window.onload = function() {
         console.log('Something went wrong: ' + err);
       } else {
         console.log('Your query count: ' + data.data.length);
-        console.log('Your data: ' + data.data)
+        //console.log('Your data: ' + data.data)
         imageList = data.data
         if (imageList.length > 0) {
           getImgs(imageList)
