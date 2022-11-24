@@ -55,7 +55,7 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
-
+/*
 window.onload = function() {
   const form  = document.getElementById('SearchFormInput');
   form.addEventListener('search', (event) => {
@@ -79,7 +79,7 @@ window.onload = function() {
     return false;
   });
 }
-
+*/
 
 // slider for delay
 var slider = document.getElementById("myRange");
